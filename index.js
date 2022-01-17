@@ -7,8 +7,8 @@ const generateSite = require('./utils/generateSite.js');
 const generatePage = require('./src/page-template.js');
 const Employee = require('./lib/Employee.js');
 
-Employee.prototype.getEmployee = function(){
-    inquirer
+const getEmployee = function() {
+    return inquirer
     .prompt([
         {
             type: 'input',
@@ -26,13 +26,13 @@ Employee.prototype.getEmployee = function(){
             message: 'Please provide a valid email:',
         }]
     )
-    .then((data) => { 
-        promptRole(data)
+    .then(data => { 
+        promptRole(data);
     })
 };
 
-Employee.prototype.promptRole = function(){
-    inquirer
+const promptRole = function(){
+    return inquirer
     .prompt([
         {
             type: 'list',
@@ -99,5 +99,5 @@ function promptIntern() {
     ])
 }
 
-new Employee().getEmployee();
+getEmployee();
 
