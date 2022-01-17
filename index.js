@@ -26,7 +26,9 @@ Employee.prototype.getEmployee = function(){
             message: 'Please provide a valid email:',
         }]
     )
-    .then((data) => { console.log(data) })
+    .then((data) => { 
+        promptRole(data)
+    })
 };
 
 Employee.prototype.promptRole = function(){
@@ -51,6 +53,51 @@ Employee.prototype.promptRole = function(){
         })
 };
 
-    
+function promptManager() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "officeNumber",
+            message: "what is your office?"
+        },
+        {
+            type: "confirm",
+            name: "addEmployee",
+            message: "Would you like to add another employee?"
+        }
+    ]);
+};
+
+
+function promptEngineer() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "gihub",
+            message: "what is their github?"
+        },
+        {
+            type: "confirm",
+            name: "addEmployee",
+            message: "Would you like to add another employee?"
+        }
+    ])
+}
+
+function promptIntern() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "School",
+            message: "what school do you attend?"
+        },
+        {
+            type: "confirm",
+            name: "addEmployee",
+            message: "Would you like to add another employee?"
+        }
+    ])
+}
+
 new Employee().getEmployee();
 
