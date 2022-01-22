@@ -1,8 +1,10 @@
 // The packages needed for this application
 const fs = require('fs');
-
+const path = require('path');
 const inquirer = require('inquirer');
-const generateSite = require('./utils/generateSite.js');
+
+const resolvePath = path.resolve(__dirname, 'path');
+const joinPath = path.join(resolvePath, 'index.html');
 
 // generates the file
 const Manager = require('./lib/Manager.js');
@@ -66,7 +68,7 @@ function startJob() {
                         promptIntern();
                         break;
                     default:
-                        finalizeTeam(teamMembers);
+                        finalizeTeam();
                 }
             });
     };
@@ -137,22 +139,9 @@ function startJob() {
         })
     };
     
-    // function finalizeTeam() {
-    //     teamMembers => {
-    //         return new Promise((response, reject) => {
-    //             fs.writeFileSync('./dist/index.html', generateHTML(teamMembers), err => {
-    //                 if (err) {
-    //                     reject(err);
-    //                     return;
-    //                 }
-    //                 response({
-    //                     ok: true,
-    //                     message: 'File created!'
-    //                 });
-    //             });
-    //         });
-    //     };
-    // }
+    function finalizeTeam() {
+        fs.writeFileSync(joinPath, generateHTML(teamMembers), 'utf-8');
+    }
 
     promptManager()
 }

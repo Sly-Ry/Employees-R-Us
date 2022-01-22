@@ -33,7 +33,7 @@ function generateEmployee(teamMembers) {
 };
 
 function generateHTML(teamMembers) {
-    console.log('file groped')
+    console.log('file reached')
   // destructure page data by section
   return `
   <!DOCTYPE html> 
