@@ -3,8 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
 
-const resolvePath = path.resolve(__dirname, 'path');
-const joinPath = path.join(resolvePath, 'index.html');
+const resolvePath = path.resolve(__dirname, './dist');
+const joinPath = path.join(resolvePath, '/index.html');
+const copyFile = require('./utils/generate-site')
 
 // generates the file
 const Manager = require('./lib/Manager.js');
@@ -16,7 +17,6 @@ const teamMembers = [];
 const idArray = [];
 
 function startJob() {
-
     function promptManager() {
         console.log('Welcome to Happy Tappy Inc. Please enter Team Manager information below: ');
         return inquirer
@@ -142,8 +142,9 @@ function startJob() {
     function finalizeTeam() {
         fs.writeFileSync(joinPath, generateHTML(teamMembers), 'utf-8');
     }
-
+    
     promptManager()
-}
+    .then(copyFile);
+};
 
-startJob();
+startJob()

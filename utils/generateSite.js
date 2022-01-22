@@ -1,4 +1,0 @@
-
-// generateManager();
-// generateEngineer();
-// generateIntern();
