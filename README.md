@@ -13,7 +13,7 @@ npm install yarn -g
 ```
 
 ## Usage
-Watch for instructions: [demonstration](https://watch.screencastify.com/v/wEZqhOaWBMUiSNPXRUiw)
+Watch for instructions: [Demonstration](https://watch.screencastify.com/v/wEZqhOaWBMUiSNPXRUiw)
 
 To initiate application:
 ```bash
