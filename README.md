@@ -30,7 +30,7 @@ Pull requests are welcome.
 
 Please make sure to update tests as appropriate.
 
-##Support
+## Support
 - Andrew Wales
 - Dave Gauthier
 
