@@ -1,4 +1,5 @@
 # Employees-R-Us
+Created by: Ryan A Williams | Github: Sly-Ry | Email: ryan.williams93@aol.com
 
 ## Description
 
