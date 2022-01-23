@@ -23,7 +23,6 @@ To initiate application:
 node index
 ```
 Deployed application:
-![Screenshot (23)](https://user-images.githubusercontent.com/93052960/150702257-9cddced6-dc55-400d-8f0b-c862a1d15159.png)
 
 
 ## Contributing
