@@ -3,34 +3,40 @@ const Manager = require("../../Employees-R-Us/lib/Manager");
 const Intern = require("../../Employees-R-Us/lib/Intern");
 const Employee = require("../lib/Employee");
 
-// create the about section
 function generateEmployee(teamMembers) { 
     const employee = [];
 
     for (let i = 0; i < teamMembers.length; i++) {
-        let teamPage =  `
+        let teamPage =  `   
             <div class="card display-inline-block">
                 <div class="card-header">
-                    <h2>${teamMembers[i].name}</h2>
-                    <h2>-${teamMembers[i].getRole()}-</h2>
+                    <h2>${teamMembers[i].getName()}</h2>
+                    <h5>-${teamMembers[i].getRole()}-</h5>
                 </div>
                 <div class="card-body">
-                    <h4>ID#: ${teamMembers[i].id}</h4>
-                    <a href="sendto:${teamMembers[i].email}">Email: ${teamMembers[i].email}</a>`
+                    <h4>ID#: ${teamMembers[i].getId()}</h4>
+                    <a href="sendto:${teamMembers[i].getEmail()}">Email: ${teamMembers[i].getEmail()}</a>`
                 if (teamMembers[i].officeNumber) {
                     teamPage += `
-                    <p>Office#: ${teamMembers[i].officeNumber}</p>`
+                    <p>Office#: ${teamMembers[i].getOfficeNumber()}</p>
+                </div>
+            </div>`
                 }
                 if (teamMembers[i].github) {
                     teamPage += `
-                    <p><a href="http://github.com/${teamMembers[i].github}"></a></p>`
+                    <p>Username: ${teamMembers[i].getGithub()}</p>
+                </div>
+            </div>`
                 } 
                 if (teamMembers[i].school) {
                     teamPage += `
-                    <p>University: ${teamMembers[i].school}</p>`
+                    <p>University: ${teamMembers[i].getSchool()}</p>
+                </div>
+            </div>`
                 }
+        employee.push(teamPage);
     }
-    employee.push(teamPage);
+    
     return employee;
 };
 
