@@ -1,6 +1,7 @@
 # Employees-R-Us
 Created by: Ryan A Williams | Github: Sly-Ry | Email: ryan.williams93@aol.com
 
+
 ## Description
 
 A team generator that takes user input and generates an index.html with style included.
